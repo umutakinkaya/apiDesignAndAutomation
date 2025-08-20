@@ -1,7 +1,7 @@
 # **Pointr REST API and Automated Test**
 A comprehensive RESTful API for managing sites, buildings, and levels with full test automation and CI/CD pipeline.
 
-🚀** Features**
+🚀**Features**
 
 - RESTful API with proper HTTP status codes
 
