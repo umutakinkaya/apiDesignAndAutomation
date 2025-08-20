@@ -131,7 +131,7 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/testdb python -m pytest tests
 
 **Create Sites**
 
-`    curl -X POST http://localhost:5000/v1/sites \
+` curl -X POST http://localhost:5000/v1/sites \
       -H "Authorization: Bearer test-token" \
       -H "Content-Type: application/json" \
       -d '{
