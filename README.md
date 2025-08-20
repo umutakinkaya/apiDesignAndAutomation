@@ -61,7 +61,7 @@ Local Development
 
 Clone the repository
 
-git clone https://github.com/yourusername/pointr-api.git
+git clone https://github.com/yourusername/apiDesignAndAutomation.git
 
 cd pointr-api
 
