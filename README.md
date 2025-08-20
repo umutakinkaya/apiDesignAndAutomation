@@ -1,23 +1,19 @@
-Pointr REST API
+# **Pointr REST API and Automated Test**
 A comprehensive RESTful API for managing sites, buildings, and levels with full test automation and CI/CD pipeline.
 
+🚀** Features**
 
+- RESTful API with proper HTTP status codes
 
-🚀 Features
+- SQLite/PostgreSQL database support
 
-RESTful API with proper HTTP status codes
+- Comprehensive Testing with pytest
 
-SQLite/PostgreSQL database support
+- CI/CD Pipeline with Jenkins
 
-Comprehensive Testing with pytest
+📋 **API Endpoints**
 
-CI/CD Pipeline with Jenkins
-
-
-
-📋 API Endpoints
-
-Sites API
+**Sites API**
 
 POST /v1/sites - Create a new site
 
@@ -26,8 +22,10 @@ GET /v1/sites/{id} - Get a specific site
 DELETE /v1/sites/{id} - Delete a site
 
 
+------------
 
-Buildings API
+
+**Buildings API**
 
 POST /v1/sites/{site_id}/buildings - Create buildings for a site
 
@@ -36,34 +34,35 @@ GET /v1/buildings/{id} - Get a specific building
 DELETE /v1/buildings/{id} - Delete a building
 
 
+------------
 
 
-Levels API
+**Levels API**
 
 POST /v1/buildings/{building_id}/levels - Create levels for a building
 
 
 
+------------
 
-🛠️ Installation
 
-Prerequisites
+
+**🛠️ Installation**
+
+**Prerequisites**
 
 Python 3.9+
 
 PostgreSQL (optional, SQLite included in the project)
 
 
-
-
-
-Local Development
+**Local Development**
 
 Clone the repository
 
 git clone https://github.com/yourusername/apiDesignAndAutomation.git
 
-cd pointr-api
+cd apiDesignAndAutomation
 
 python runAPI.py
 
@@ -82,44 +81,50 @@ If you dont use any run parameter, runAPI will run all parameters.
 
 
 
-# Database
+** Database**
 DATABASE_URL=sqlite:///pointr.db
 
 
+------------
 
-🧪 Testing
 
-Run All Tests
+
+**🧪 Testing**
+
+**Run All Tests**
 
 python -m pytest tests/ -v
 
-for detail test report RUN: python -m pytest tests/ -v --html=test-results/detailed-report.html --self-contained-html
+*for detail test report RUN*: 
+python -m pytest tests/ -v --html=test-results/detailed-report.html --self-contained-html
 
-Run Specific Test Groups
+**Run Specific Test Groups**
 
-# Site tests
+**Site tests**
 python -m pytest tests/test_sites.py -v
-# Building tests  
+
+------------
+**Building tests  **
 python -m pytest tests/test_buildings.py -v
-# Level tests
+**Level tests**
 python -m pytest tests/test_levels.py -v
 
 
-Test with Different Databases
-# SQLite in-memory (default)
+------------
+
+
+
+**Test with Different Databases**
+**SQLite in-memory (default)**
 python -m pytest tests/ -v
-# PostgreSQL
+**PostgreSQL**
 DATABASE_URL=postgresql://user:pass@localhost:5432/testdb python -m pytest tests/ -v
 
 
-📊 API Usage Examples
-Authentication
-All endpoints require authentication:
+**📊 API Usage Examples**
 
-bash
 curl -H "Authorization: Bearer test-token" http://localhost:5000/v1/sites
-Create a Site
-bash
+
 curl -X POST http://localhost:5000/v1/sites \
   -H "Authorization: Bearer test-token" \
   -H "Content-Type: application/json" \
@@ -131,7 +136,7 @@ curl -X POST http://localhost:5000/v1/sites \
     "description": "Bir sürü binası olan büyük bir site"
   }'
 Create Buildings
-bash
+
 curl -X POST http://localhost:5000/v1/sites/{site_id}/buildings \
   -H "Authorization: Bearer test-token" \
   -H "Content-Type: application/json" \
@@ -143,8 +148,8 @@ curl -X POST http://localhost:5000/v1/sites/{site_id}/buildings \
       "floors": 10
     }
   ]'
-Create Levels
-bash
+
+
 curl -X POST http://localhost:5000/v1/buildings/{building_id}/levels \
   -H "Authorization: Bearer test-token" \
   -H "Content-Type: application/json" \
@@ -157,25 +162,28 @@ curl -X POST http://localhost:5000/v1/buildings/{building_id}/levels \
     }
   ]'
 
-  
+
+------------
+
+
 
 📈 CI/CD Pipeline
 
-The project includes a complete Jenkins CI/CD pipeline:
+- The project includes a complete Jenkins CI/CD pipeline:
 
-Pipeline Stages
+- Pipeline Stages
 
-Checkout - Source code checkout
+- Checkout - Source code checkout
 
-Setup - Dependency installation
-Lint - Code quality checking
+- Setup - Dependency installation
+- Lint - Code quality checking
 
-Test - Unit and integration tests
+- Test - Unit and integration tests
 
-Coverage - Test coverage reporting
+- Coverage - Test coverage reporting
 
-Build - Docker image building
+- Build - Docker image building
 
-Deploy - Production deployment
+- Deploy - Production deployment
 
 
