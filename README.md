@@ -103,9 +103,9 @@ python -m pytest tests/ -v --html=test-results/detailed-report.html --self-conta
 **Site tests**
 python -m pytest tests/test_sites.py -v
 
-------------
-**Building tests  **
+**Building tests**
 python -m pytest tests/test_buildings.py -v
+
 **Level tests**
 python -m pytest tests/test_levels.py -v
 
