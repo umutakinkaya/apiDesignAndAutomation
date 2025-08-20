@@ -80,31 +80,29 @@ run     : just runs API
 If you dont use any run parameter, runAPI will run all parameters. 
 
 
+
+
 # Database
 DATABASE_URL=sqlite:///pointr.db
 
 
-# Security
-AUTH_TOKENS=test-token,production-token
-SECRET_KEY=your-secret-key
-
-# Application
-FLASK_ENV=development
-FLASK_DEBUG=True
 
 🧪 Testing
+
 Run All Tests
+
 python -m pytest tests/ -v
+
+for detail test report RUN: python -m pytest tests/ -v --html=test-results/detailed-report.html --self-contained-html
+
 Run Specific Test Groups
+
 # Site tests
 python -m pytest tests/test_sites.py -v
 # Building tests  
 python -m pytest tests/test_buildings.py -v
 # Level tests
 python -m pytest tests/test_levels.py -v
-
-# With coverage report
-python -m pytest tests/ --cov=app --cov-report=html
 
 
 Test with Different Databases
@@ -162,34 +160,22 @@ curl -X POST http://localhost:5000/v1/buildings/{building_id}/levels \
   
 
 📈 CI/CD Pipeline
+
 The project includes a complete Jenkins CI/CD pipeline:
 
 Pipeline Stages
+
 Checkout - Source code checkout
+
 Setup - Dependency installation
 Lint - Code quality checking
+
 Test - Unit and integration tests
+
 Coverage - Test coverage reporting
+
 Build - Docker image building
+
 Deploy - Production deployment
 
 
-
-🗺️ Project Structure
-text
-pointr-api/
-├── app/                 # Application code
-│   ├── routes/         # API routes
-│   ├── models/         # Database models
-│   ├── utils/          # Utility functions
-│   └── __init__.py     # Application factory
-├── tests/              # Test suite
-│   ├── test_sites.py   # Site tests
-│   ├── test_buildings.py # Building tests
-│   └── test_levels.py  # Level tests
-├── migrations/         # Database migrations
-├── requirements.txt    # Python dependencies
-├── Dockerfile         # Container configuration
-├── docker-compose.yml # Multi-container setup
-├── Jenkinsfile        # CI/CD pipeline
-└── README.md          # This file
