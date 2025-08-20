@@ -1,44 +1,80 @@
 Pointr REST API
 A comprehensive RESTful API for managing sites, buildings, and levels with full test automation and CI/CD pipeline.
 
+
+
 🚀 Features
+
 RESTful API with proper HTTP status codes
+
 SQLite/PostgreSQL database support
+
 Comprehensive Testing with pytest
+
 CI/CD Pipeline with Jenkins
 
+
+
 📋 API Endpoints
+
 Sites API
+
 POST /v1/sites - Create a new site
+
 GET /v1/sites/{id} - Get a specific site
+
 DELETE /v1/sites/{id} - Delete a site
 
+
+
 Buildings API
+
 POST /v1/sites/{site_id}/buildings - Create buildings for a site
+
 GET /v1/buildings/{id} - Get a specific building
+
 DELETE /v1/buildings/{id} - Delete a building
 
+
+
+
 Levels API
+
 POST /v1/buildings/{building_id}/levels - Create levels for a building
 
+
+
+
 🛠️ Installation
+
 Prerequisites
+
 Python 3.9+
+
 PostgreSQL (optional, SQLite included in the project)
 
+
+
+
+
 Local Development
+
 Clone the repository
-bash
+
 git clone https://github.com/yourusername/pointr-api.git
+
 cd pointr-api
-Create virtual environment
+
 python runAPI.py
+
 The API will be available at http://localhost:5000
 
 "Usage: python runAPI.py [init-db|seed-db|run]"
 
 init-db : create tables for the API
+
 seed-db : creates test data for database
+
 run     : just runs API
 
 If you dont use any run parameter, runAPI will run all parameters. 
@@ -46,7 +82,7 @@ If you dont use any run parameter, runAPI will run all parameters.
 
 # Database
 DATABASE_URL=sqlite:///pointr.db
-# or for PostgreSQL: postgresql://user:password@localhost:5432/pointr
+
 
 # Security
 AUTH_TOKENS=test-token,production-token
