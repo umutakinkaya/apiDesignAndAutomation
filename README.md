@@ -101,12 +101,15 @@ python -m pytest tests/ -v --html=test-results/detailed-report.html --self-conta
 **Run Specific Test Groups**
 
 **Site tests**
+
 python -m pytest tests/test_sites.py -v
 
 **Building tests**
+
 python -m pytest tests/test_buildings.py -v
 
 **Level tests**
+
 python -m pytest tests/test_levels.py -v
 
 
@@ -115,14 +118,19 @@ python -m pytest tests/test_levels.py -v
 
 
 **Test with Different Databases**
+
 **SQLite in-memory (default)**
+
 python -m pytest tests/ -v
 **PostgreSQL**
+
 DATABASE_URL=postgresql://user:pass@localhost:5432/testdb python -m pytest tests/ -v
 
 
 **📊 API Usage Examples**
+
 **Create Sites**
+
 `    curl -X POST http://localhost:5000/v1/sites \
       -H "Authorization: Bearer test-token" \
       -H "Content-Type: application/json" \
@@ -133,6 +141,7 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/testdb python -m pytest tests
         "country": "TR",
         "description": "Bir sürü binası olan büyük bir site"
       }'`
+      
 **Create Buildings**
 
 `curl -X POST http://localhost:5000/v1/sites/{site_id}/buildings \
@@ -148,6 +157,7 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/testdb python -m pytest tests
   ]'`
 
 **Create Levels**
+
 `curl -X POST http://localhost:5000/v1/buildings/{building_id}/levels \
   -H "Authorization: Bearer test-token" \
   -H "Content-Type: application/json" \
@@ -189,6 +199,7 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/testdb python -m pytest tests
 
 
 # Requirements
+
 **Core Framework**
 - Flask==2.3.3
 - Flask-SQLAlchemy==3.0.5
