@@ -192,20 +192,20 @@ curl -X POST http://localhost:5000/v1/buildings/{building_id}/levels \
 
 #Requirements
 **Core Framework**
-Flask==2.3.3
-Flask-SQLAlchemy==3.0.5
-Flask-CORS==4.0.0
-SQLAlchemy==2.0.32
-python-dotenv==1.0.0
+- Flask==2.3.3
+- Flask-SQLAlchemy==3.0.5
+- Flask-CORS==4.0.0
+- SQLAlchemy==2.0.32
+- python-dotenv==1.0.0
 
 **Testing**
-pytest==8.4.1
-pytest-cov==4.1.0
-pytest-html==4.1.1
-pytest-xdist==3.3.1
-Faker==25.8.0
-factory-boy==3.3.1
-requests==2.31.0
+- pytest==8.4.1
+- pytest-cov==4.1.0
+- pytest-html==4.1.1
+- pytest-xdist==3.3.1
+- Faker==25.8.0
+- factory-boy==3.3.1
+- requests==2.31.0
 
 **Package Management**
-pip-tools==6.13.0
+- pip-tools==6.13.0
