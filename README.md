@@ -58,23 +58,23 @@ PostgreSQL (optional, SQLite included in the project)
 
 **Local Development**
 
-Clone the repository
+*Clone the repository*
 
-git clone https://github.com/yourusername/apiDesignAndAutomation.git
-
-cd apiDesignAndAutomation
-
-python runAPI.py
+    git clone https://github.com/yourusername/apiDesignAndAutomation.git
+    
+    cd apiDesignAndAutomation
+    
+    python runAPI.py
 
 The API will be available at http://localhost:5000
 
 "Usage: python runAPI.py [init-db|seed-db|run]"
 
-init-db : create tables for the API
+- init-db : create tables for the API
 
-seed-db : creates test data for database
+- seed-db : creates test data for database
 
-run     : just runs API
+- run     : just runs API
 
 If you dont use any run parameter, runAPI will run all parameters. 
 
@@ -122,22 +122,20 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/testdb python -m pytest tests
 
 
 **📊 API Usage Examples**
+**Create Sites**
+`    curl -X POST http://localhost:5000/v1/sites \
+      -H "Authorization: Bearer test-token" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "name": "Test Sitesi",
+        "address": "123 Sokak Test Adresi",
+        "city": "İstanbul",
+        "country": "TR",
+        "description": "Bir sürü binası olan büyük bir site"
+      }'`
+**Create Buildings**
 
-curl -H "Authorization: Bearer test-token" http://localhost:5000/v1/sites
-
-curl -X POST http://localhost:5000/v1/sites \
-  -H "Authorization: Bearer test-token" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "Test Sitesi",
-    "address": "123 Sokak Test Adresi",
-    "city": "İstanbul",
-    "country": "TR",
-    "description": "Bir sürü binası olan büyük bir site"
-  }'
-Create Buildings
-
-curl -X POST http://localhost:5000/v1/sites/{site_id}/buildings \
+`curl -X POST http://localhost:5000/v1/sites/{site_id}/buildings \
   -H "Authorization: Bearer test-token" \
   -H "Content-Type: application/json" \
   -d '[
@@ -147,10 +145,10 @@ curl -X POST http://localhost:5000/v1/sites/{site_id}/buildings \
       "address": "123 SOkak St",
       "floors": 10
     }
-  ]'
+  ]'`
 
-
-curl -X POST http://localhost:5000/v1/buildings/{building_id}/levels \
+**Create Levels**
+`curl -X POST http://localhost:5000/v1/buildings/{building_id}/levels \
   -H "Authorization: Bearer test-token" \
   -H "Content-Type: application/json" \
   -d '[
@@ -160,7 +158,7 @@ curl -X POST http://localhost:5000/v1/buildings/{building_id}/levels \
       "description": "Giriş",
       "map_data": "base64_encoded_data"
     }
-  ]'
+  ]'`
 
 
 ------------
